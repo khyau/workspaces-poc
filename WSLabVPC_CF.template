@@ -1,0 +1,139 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  VPC WorkSpaces Lab VPC Infrastructure one public and two private subnets
+  template
+Metadata:
+  'AWS::CloudFormation::Interface':
+    ParameterGroups:
+      - Label:
+          default: VPC Parameters
+        Parameters:
+          - ClassB
+Parameters:
+  ClassB:
+    Description: 2nd Octet/Class B of VPC (10.XXX.0.0/16)
+    Type: Number
+    Default: 0
+    ConstraintDescription: Entry must fall between 0 and 255
+    MinValue: 0
+    MaxValue: 255
+Resources:
+  WorkSpacesLabVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: !Sub '10.${ClassB}.0.0/16'
+      Tags:
+        - Key: Name
+          Value: WorkSpaces VPC
+  PublicSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      AvailabilityZone: !Join 
+        - ''
+        - - !Ref 'AWS::Region'
+          - a
+      CidrBlock: !Sub '10.${ClassB}.0.0/24'
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: WorkSpaces Public Subnet
+  PrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      AvailabilityZone: !Join 
+        - ''
+        - - !Ref 'AWS::Region'
+          - a
+      CidrBlock: !Sub '10.${ClassB}.1.0/24'
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: WorkSpaces Private Subnet1
+  PrivateSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      AvailabilityZone: !Join 
+        - ''
+        - - !Ref 'AWS::Region'
+          - b
+      CidrBlock: !Sub '10.${ClassB}.2.0/24'
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: WorkSpaces Private Subnet2
+  InternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: WorkSpaces IGW
+        - Key: Network
+          Value: Public
+  GatewayToInternet:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      InternetGatewayId: !Ref InternetGateway
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      Tags:
+        - Key: Network
+          Value: Public
+        - Key: Name
+          Value: WorkSpaces Public Route Table
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    DependsOn: GatewayToInternet
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+  PublicSubnet1RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref PublicSubnet1
+      RouteTableId: !Ref PublicRouteTable
+  NatGateway:
+    Type: 'AWS::EC2::NatGateway'
+    DependsOn: NatPublicIP
+    Properties:
+      AllocationId: !GetAtt NatPublicIP.AllocationId
+      SubnetId: !Ref PublicSubnet1
+      Tags:
+        - Key: Name
+          Value: WorkSpaces NatGateway
+  NatPublicIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: WorkSpacesLabVPC
+    Properties:
+      Domain: vpc
+  PrivateRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref WorkSpacesLabVPC
+      Tags:
+        - Key: Network
+          Value: Private
+        - Key: Name
+          Value: WorkSpaces Private Route Table
+  PrivateRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway
+  PrivateSubnet1RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref PrivateSubnet1
+      RouteTableId: !Ref PrivateRouteTable
+  PrivateSubnet2RouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref PrivateSubnet2
+      RouteTableId: !Ref PrivateRouteTable
