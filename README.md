@@ -12,3 +12,5 @@ The steps in this section will walk you through running an AWS CloudFormation sc
 | VPC Name  | WorkSpaces VPC  |
 | VPC IPv4 CIDR block   | 10.X.0.0/16   Where X is your choice (0-255)  |
 | Public subnet name  | WorkSpaces Public Subnet  |
+
+![workspaces-poc](images/network diagram.jpg)
