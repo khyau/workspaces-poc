@@ -72,3 +72,20 @@ Next, you will assign a WorkSpaces Bundle  to the user you just created. For thi
 You are now presented with the WorkSpaces Configuration options. On this screen, you can select the AlwaysOn or AutoStop running mode, enable encrypted drives, and specify tags.
 
 ![workspaces-poc](images/mode.jpg)
+
+For this lab, the user needs to register (IE set a password) as our Managed Microsoft Active Directory is NOT connected to a full AD for authentication purposes.
+
+Note: If we had selected an AWS Directory Service type of Active Directory Connector or established a trust relationship between our MMAD and an Active Directory, we would simply use domain credentials. Any instance of Simple AD would follow these directions. 
+
+$ Step 4: Create a Custom Image and Bundle. 
+
+1.	Go to the WorkSpaces console at https://console.aws.amazon.com/workspaces. 
+2.	Ensure the status of the WorkSpace assigned to ImageBuilder_sa is “AVAILABLE”. 
+3.	Select the ImageBuilder_sa WorkSpace, choose Actions, Create Image.  
+![workspaces-poc](images/image.jpg)
+4.	You are presented with some background information on the Create WorkSpace Image process. Read through the information and then click Next. 
+5.	Give the image a Name and Description, and then choose Create Image. 
+6.  From the Images section of the WorkSpaces console navigation pane.
+7.	Once the Image Status changes to “AVAILABLE”: 
+8.	The custom image is ready AND your ImageBuilder WorkSpace will reboot and be available for use. 
+
