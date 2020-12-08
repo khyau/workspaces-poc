@@ -39,3 +39,4 @@ Amazon WorkSpaces requires an AWS Directory Service store to facilitate WorkSpac
 | Admin Password | The password for directory administrator |
 | Confirm Password | retypr password to confirm |
 
+![workspaces-poc](images/subnet.jpg)
