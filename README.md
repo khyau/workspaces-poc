@@ -35,7 +35,7 @@ Amazon WorkSpaces requires an AWS Directory Service store to facilitate WorkSpac
 | ------------- | ------------- |
 | Directory DNS Name | Workspaces.lab(X).com |
 | Directory NetBIOS Name | "Workspaces" |
-| Directory Description | |An AWS MMAD instance used for the workspaces.lab(X).com lab domain. Created by your name with date. |
+| Directory Description | An AWS MMAD instance used for the workspaces.lab(X).com lab domain. Created by your name with date. |
 | Admin Password | The password for directory administrator |
 | Confirm Password | retypr password to confirm |
 
