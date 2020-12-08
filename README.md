@@ -68,3 +68,7 @@ The first WorkSpace we are going to provision will be used to create a custom im
 Next, you will assign a WorkSpaces Bundle  to the user you just created. For this lab, select the Standard with Windows 10 bundle. This automatically assigns that bundle to the user you created in the last step.
 
 ![workspaces-poc](images/bundle.jpg)
+
+You are now presented with the WorkSpaces Configuration options. On this screen, you can select the AlwaysOn or AutoStop running mode, enable encrypted drives, and specify tags.
+
+![workspaces-poc](images/mode.jpg)
