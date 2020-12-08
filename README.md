@@ -77,7 +77,7 @@ For this lab, the user needs to register (IE set a password) as our Managed Micr
 
 Note: If we had selected an AWS Directory Service type of Active Directory Connector or established a trust relationship between our MMAD and an Active Directory, we would simply use domain credentials. Any instance of Simple AD would follow these directions. 
 
-$ Step 4: Create a Custom Image and Bundle. 
+# Step 4: Create a Custom Image and Bundle. 
 
 1.	Go to the WorkSpaces console at https://console.aws.amazon.com/workspaces. 
 2.	Ensure the status of the WorkSpace assigned to ImageBuilder_sa is “AVAILABLE”. 
