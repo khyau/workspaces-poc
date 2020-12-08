@@ -50,4 +50,10 @@ WorkSpace for that new user, connect to that instance and install business appli
 
 ![workspaces-poc](images/directory.jpg)
 
-On the Enable Self Service Permissions prompt with leaving the **Yes** option button selected, and then choose Register again to begin the directory registration process.
+On the Enable **Self Service Permissions** prompt with leaving the **Yes** option button selected, and then choose Register again to begin the directory registration process.
+
+It takes a few (3 to 5) minutes for the registration process to complete. Once it has successfully registered the registered value changes to “YES”. 
+
+*Launch WorkSpaces*
+
+![workspaces-poc](images/ws.jpg)
