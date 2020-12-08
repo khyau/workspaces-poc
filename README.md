@@ -59,8 +59,10 @@ It takes a few (3 to 5) minutes for the registration process to complete. Once i
 ![workspaces-poc](images/ws.jpg)
 
 Select the AWS Managed Microsoft AD directory (workspaces.labXXX.lab) you created in the previous section from the Directory dropdown and then choose Next Step.
-9.	You can now either add users to your directory or select from existing users if you add previously created some or are connected to an Active Directory. Since we just created this directory, you will need to create at least one user. <br/>
-The first WorkSpace we are going to provision will be used to create a custom image for subsequent deployments to your end users. As such, we are going to create a “service” account in the directory for this purpose.  <br/>
+9.	You can now either add users to your directory or select from existing users if you add previously created some or are connected to an Active Directory. Since we just created this directory, you will need to create at least one user. 
+
+The first WorkSpace we are going to provision will be used to create a custom image for subsequent deployments to your end users. As such, we are going to create a “service” account in the directory for this purpose.  
+
 **Email Note**: It’s important to use a valid email address where you can receive email so that you can receive the one-time activation link. In order for this user account to become active, you need to set a password by following the instructions on the activation page. If you don’t use a valid email address, you’ll need to retrieve the registration link from the console. 
 
 Next, you will assign a WorkSpaces Bundle  to the user you just created. For this lab, select the Standard with Windows 10 bundle. This automatically assigns that bundle to the user you created in the last step.
