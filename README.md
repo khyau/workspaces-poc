@@ -49,3 +49,5 @@ Once the Directory is set up, you are able to provision a WorkSpace via the cons
 WorkSpace for that new user, connect to that instance and install business applications. Once configured, the WorkSpace will then be used to create a custom image for the purposes of provisioning additional WorkSpaces for our other end users. 
 
 ![workspaces-poc](images/directory.jpg)
+
+On the Enable Self Service Permissions prompt with leaving the **Yes** option button selected, and then choose Register again to begin the directory registration process.
