@@ -28,3 +28,14 @@ The steps in this section will walk you through running an AWS CloudFormation sc
 
 # Second Step: Create an AWS Directory Service
 Amazon WorkSpaces requires an AWS Directory Service store to facilitate WorkSpace and user information for authentication and management purposes. The Amazon WorkSpaces managed service can create this directory in the cloud for you using either Simple AD  or AWS Managed Microsoft AD. Additionally, you can connect to an existing Active Directory using the Active Directory Connector (or AWS Managed Microsoft AD via a standard domain trust) through the AWS Directory Services console. 
+
+![workspaces-poc](images/ad.jpg)
+
+| Option | Value |
+| ------------- | ------------- |
+| Directory DNS Name | Workspaces.lab(X).com |
+| Directory NetBIOS Name | "Workspaces" |
+| Directory Description | |An AWS MMAD instance used for the workspaces.lab(X).com lab domain. Created by your name with date. |
+| Admin Password | The password for directory administrator |
+| Confirm Password | retypr password to confirm |
+
