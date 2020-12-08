@@ -4,7 +4,7 @@
 > * ap-southeast-1
 > * should work in other service available region
 
-# First Step: Create the WorkSpaces Lab VPC network infrastructure using AWS CloudFormation 
+# Step 1 : Create the WorkSpaces Lab VPC network infrastructure using AWS CloudFormation 
 The steps in this section will walk you through running an AWS CloudFormation script to build out a fully functioning Virtual Private Cloud (VPC) infrastructure in the selected region you choose under your AWS account in an automated fashion.
 
 | Components | Value |
@@ -26,7 +26,7 @@ The steps in this section will walk you through running an AWS CloudFormation sc
 ![workspaces-poc](images/network_diagram.jpg)
 
 
-# Second Step: Create an AWS Directory Service
+# Step 2 : Create an AWS Directory Service
 Amazon WorkSpaces requires an AWS Directory Service store to facilitate WorkSpace and user information for authentication and management purposes. The Amazon WorkSpaces managed service can create this directory in the cloud for you using either Simple AD  or AWS Managed Microsoft AD. Additionally, you can connect to an existing Active Directory using the Active Directory Connector (or AWS Managed Microsoft AD via a standard domain trust) through the AWS Directory Services console. 
 
 ![workspaces-poc](images/ad.jpg)
@@ -40,3 +40,12 @@ Amazon WorkSpaces requires an AWS Directory Service store to facilitate WorkSpac
 | Confirm Password | retypr password to confirm |
 
 ![workspaces-poc](images/subnet.jpg)
+
+Review the summary of the directory information that is presented and make any necessary changes. When the information is correct. 
+
+
+# Step 3 : Launch an initial WorkSpace to build a custom image
+Once the Directory is set up, you are able to provision a WorkSpace via the console. In this section, we are going to create a new user in our MMAD directory, launch an initial 
+WorkSpace for that new user, connect to that instance and install business applications. Once configured, the WorkSpace will then be used to create a custom image for the purposes of provisioning additional WorkSpaces for our other end users. 
+
+![workspaces-poc](images/directory.jpg)
