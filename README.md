@@ -89,3 +89,10 @@ Note: If we had selected an AWS Directory Service type of Active Directory Conne
 7.	Once the Image Status changes to “AVAILABLE”: 
 8.	The custom image is ready AND your ImageBuilder WorkSpace will reboot and be available for use. 
 
+**Remark**: WorkSpaces are provisioned from a Bundle to a Specific UserID in an AWS Directory Service 
+Instance. Users are tied to bundles not Images. A bundle is a combination of an image AND WorkSpaces hardware instance types. You can create multiple bundles, using the SAME image with difference Hardware types. 
+
+9.	Now that the image is complete, we need to create a bundle based on this Image. On the Images page, select the new image, choose Actions, and **Create Bundle**. 
+10.	The Create Bundle window appears. Provide the information in the VPC Details section.
+11.	A Bundle Created prompt will appear. To validate, click on the Bundles section in the navigation pane.  
+12.	The bundle with the custom image is listed and you are now ready to provision a WorkSpace for an End User. 
