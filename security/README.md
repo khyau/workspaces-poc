@@ -14,3 +14,13 @@ How you define your user groups should reflect how you classify your data and th
 Amazon Workspaces can create and manage a directory for you so that users are entered into that directory when you provision a WorkSpace. As an alternative, you can integrate WorkSpaces with an existing, on-premises Microsoft Active Directory (AD) so your users can use the credentials they already know to access applications.
 
 Within Amazon WorkSpaces, directories play a large part in how access to workspaces is configured. Directories within Amazon WorkSpaces are used to store and manage information for your WorkSpaces and users. Based on the preceding two example user groups, let’s split your users’ WorkSpaces across two directories. That will help you to establish different access control settings for the two groups.
+
+# Step 1: To establish and configure security groups
+
+In the Amazon WorkSpaces menu, select Directories from the left menu. Choose the directory you created for your external users. Select Actions and then Update Details as shown in the following figure.
+
+![workspaces-poc](images/update_detail.png)
+
+In the Update Directory Details screen that appears, select the down arrow next to Security Group to expand the section. Select Create New next to the dropdown menu to configure a new security group.
+
+![workspaces-poc](images/security_group.png)
