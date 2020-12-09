@@ -10,6 +10,7 @@ How you define your user groups should reflect how you classify your data and th
 
 
 *Configure Active Directory*
+
 Amazon Workspaces can create and manage a directory for you so that users are entered into that directory when you provision a WorkSpace. As an alternative, you can integrate WorkSpaces with an existing, on-premises Microsoft Active Directory (AD) so your users can use the credentials they already know to access applications.
 
 Within Amazon WorkSpaces, directories play a large part in how access to workspaces is configured. Directories within Amazon WorkSpaces are used to store and manage information for your WorkSpaces and users. Based on the preceding two example user groups, let’s split your users’ WorkSpaces across two directories. That will help you to establish different access control settings for the two groups.
