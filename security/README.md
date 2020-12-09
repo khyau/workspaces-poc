@@ -24,3 +24,24 @@ In the Amazon WorkSpaces menu, select Directories from the left menu. Choose the
 In the Update Directory Details screen that appears, select the down arrow next to Security Group to expand the section. Select Create New next to the dropdown menu to configure a new security group.
 
 ![workspaces-poc](images/security_group.png)
+
+# Step 2: Disable local administrator rights
+
+1. In the Amazon WorkSpaces menu, select Directories from the left menu. Choose the directory you configured for your external users.
+2. Select Actions and then Update Details.
+3. In Update Directory Details, select Local Administrator Setting and choose the Enable radio button.
+4. Select Update and Exit as shown in the following figure.
+
+![workspaces-poc](images/local_admin.png)
+
+# Step 3: Define IP access control
+
+1. Inside the Amazon WorkSpaces page, select IP Access Controls on the left panel. Select Create IP Group and enter a Group Name and Description in the window that appears.
+2. Select Create as shown in the following figure.
+3. Select the box next to the IP group you just created to open the new rules form.
+
+![workspaces-poc](images/create_ipgroup.png)
+
+4. Select Add Rule.
+5. Enter the individual IP addresses or CIDR IP ranges that you want to allow WorkSpaces to have access from in Source. If you want to restrict access to your VPN make sure to add the public IPs of the VPN. Enter a description in Description.
+6. Select Save as shown in the following figure.
