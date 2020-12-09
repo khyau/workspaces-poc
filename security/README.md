@@ -2,7 +2,7 @@
 
 As part of the shared responsibility model, security is a shared responsibility between Amazon Web Services (AWS) and you. AWS is responsible for protecting the infrastructure that runs the AWS services while you are responsible for securing your data in AWS through appropriate permissions and WorkSpace management as outlined in the Best Practices for Deploying Amazon WorkSpaces whitepaper. 
 
-# Before start
+# Before Start
 *Define User Group*
 How you define your user groups should reflect how you classify your data and the access controls associated with the classifications. A common approach is to begin by separating your internal (employees) and external (vendors and consultants) users. The identification process also helps to ensure that you’re following the principle of least privilege by limiting access to certain applications or resources. These user groups are the building blocks for designing the rest of your security controls, including the directories, access controls, and security groups.
 
